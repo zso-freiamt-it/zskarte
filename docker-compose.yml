@@ -44,6 +44,7 @@ services:
     environment:
       - DATABASE_HOST=postgresql-zskarte
       - DATABASE_PORT=5432
+    restart: unless-stopped
     depends_on:
       postgresql-zskarte:
         condition: service_healthy
@@ -53,6 +54,7 @@ services:
       dockerfile: Dockerfile.app
     container_name: app-zskarte
     ports: [ 4300:80 ]
+    restart: unless-stopped
     
 
 networks:
