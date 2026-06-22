@@ -551,6 +551,16 @@ export class JournalFormComponent {
           this.journalForm.patchValue({
             visumMessage: savedVisa,
           });
+
+          // Temporary patch until fixed in zskarte https://github.com/zskarte/zskarte/issues/908
+          // Additionally added Empfänger
+          if (rest.communicationType === 'funk') {
+            this.journalForm.patchValue({
+              creator: rest.creator,
+              communicationType: rest.communicationType,
+              communicationDetails: rest.communicationDetails,
+            });
+          }
           this.dirty.emit(false);
           this.showPrint = false;
         } else {
