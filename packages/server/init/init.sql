@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict YoPrDhWHmG5nwT0rqZW5a0kaM8Cx080OLjX0W2kLUhSQf3RhquEdYGHRMa4a9nb
+\restrict Zqw99O3aUCzGxhP2ce9QEIRtAf4KDbickQrNEOGpjvzOaRcaKdpnKMJl4l1LTeQ
 
 -- Dumped from database version 16.3
 -- Dumped by pg_dump version 16.13
@@ -3250,7 +3250,8 @@ COPY public.map_layers (id, label, server_layer_name, type, custom_source, optio
 3	117 Alarmzentralen	ch.bakom.notruf-117_zentral	wmts	\N	{"format": "png", "topics": "api,ech,inspire,notruf,service-wms", "opacity": 1, "tooltip": true, "hasLegend": true, "wmsLayers": "ch.bakom.notruf-117_zentral", "background": false, "chargeable": false, "searchable": false, "timestamps": ["current"], "attribution": "BAKOM", "resolutions": [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1.5, 1], "timeEnabled": false, "highlightable": true, "attributionUrl": "https://www.bakom.admin.ch/bakom/de/home.html"}	\N	2025-01-21 10:43:33.47	2025-01-21 10:43:33.47	\N	\N	pu4ekmhy07j5a5mo3bl4fjq5	\N	2025-01-22 13:42:13.663
 4	112 Mobilnetz	ch.bakom.notruf-112_mobilnetz	wmts	\N	{"format": "png", "topics": "api,ech,inspire,notruf,service-wms", "opacity": 1, "tooltip": true, "hasLegend": true, "background": false, "chargeable": false, "searchable": true, "timestamps": ["current"], "attribution": "BAKOM", "resolutions": [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1.5, 1, 0.5, 0.25], "timeEnabled": false, "highlightable": true, "attributionUrl": "https://www.bakom.admin.ch/bakom/de/home.html"}	\N	2025-01-23 09:13:58.103	2025-01-23 09:13:58.103	\N	\N	mxkmcwq3dseg45fo92t46yii	\N	2025-01-23 09:13:58.1
 5	112 Alarmzentralen	ch.bakom.notruf-112_zentral	wmts	\N	{"format": "png", "topics": "api,ech,inspire,notruf,service-wms", "opacity": 1, "tooltip": true, "hasLegend": true, "wmsLayers": "ch.bakom.notruf-112_zentral", "background": false, "chargeable": false, "searchable": false, "timestamps": ["current"], "attribution": "BAKOM", "resolutions": [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1.5, 1], "timeEnabled": false, "highlightable": true, "attributionUrl": "https://www.bakom.admin.ch/bakom/de/home.html"}	\N	2025-01-23 09:13:58.135	2025-01-23 09:13:58.135	\N	\N	lljhqmyubguxstpyat2tfbui	\N	2025-01-23 09:13:58.132
-6	NTP Notfalltreffpunkte AG Offline	NTPAG	geojson	/assets/geojson/notfalltreffpunkte_ag.geojson	{"opacity": 0.8, "styleUrl": "assets/geojson/style.json", "searchable": false, "styleFormat": "olFlat", "styleSourceType": "url"}	t	2026-06-19 11:24:46.185	2026-06-19 12:13:41.342	1	1	xtfi9xtlevthk7o4wuwtxv8l	\N	2026-06-19 12:13:41.337
+6	NTP Notfalltreffpunkte AG Offline	NTPAG	geojson	/assets/geodata/ntp/notfalltreffpunkte_ag.geojson	{"opacity": 0.8, "styleUrl": "assets/geodata/ntp/style.json", "searchable": false, "styleFormat": "olFlat", "styleSourceType": "url"}	t	2026-06-19 11:24:46.185	2026-06-23 11:57:23.35	1	1	xtfi9xtlevthk7o4wuwtxv8l	\N	2026-06-23 11:57:23.334
+7	ZSO Organisationen AG Offline	ZSOAG	shape	/assets/geodata/zso_orgs/AGIS.amb_bsr__kanton_aargau__Shapefile.zip	{"opacity": 1, "styleUrl": "assets/geodata/zso_orgs/style.json", "searchable": false, "styleFormat": "olFlat", "styleSourceType": "url"}	t	2026-06-23 11:52:05.446	2026-06-23 13:06:51.906	1	1	vw45qq72o4xfr0hjqkhysdlq	\N	2026-06-23 13:06:51.886
 \.
 
 
@@ -3297,6 +3298,7 @@ COPY public.map_snapshots_operation_lnk (id, map_snapshot_id, operation_id, map_
 --
 
 COPY public.operations (id, name, description, status, map_state, event_states, map_layers, created_at, updated_at, created_by_id, updated_by_id, document_id, locale, published_at, phase) FROM stdin;
+12	aaa	aaa	active	{"id": "27a224c8-6cc0-48a7-b4e4-d3fdf20c72d1", "name": "", "center": [8.339105, 47.274227], "layers": {"cc1d7b71-7949-4627-a745-28791fb984e8": {"id": "3c8679f4-e0de-434d-87df-367b23ef485c", "name": "Layer 1", "type": "draw"}}, "version": 2}	[]	\N	2026-06-23 13:05:22.33	2026-06-23 13:05:22.33	\N	\N	leqqx2jds7hh76hfk1yzwy71	\N	2026-06-23 13:05:22.311	active
 \.
 
 
@@ -3305,6 +3307,7 @@ COPY public.operations (id, name, description, status, map_state, event_states, 
 --
 
 COPY public.operations_organization_lnk (id, operation_id, organization_id, operation_ord) FROM stdin;
+12	12	5	1
 \.
 
 
@@ -3494,6 +3497,7 @@ COPY public.strapi_sessions (id, document_id, user_id, session_id, child_id, dev
 10	sf2po82fmv1hwpg5jvxcq454	1	2218a570f22af580ba7c9bd8395a9a29	d78e038a8d0606c04ad6a5597e3a958a	26b5d32c-24cf-41af-81c4-a73ab2bae041	admin	2026-06-19 13:40:51.001	2026-07-19 11:40:51.001	rotated	session	2026-06-19 11:40:51.001	2026-06-19 12:10:58.264	2026-06-19 11:40:51.001	\N	\N	\N
 12	d533tq2mob2zxoj8a6cbe5gh	1	011cdf0180e8f36c3a082f4887cb2f65	\N	ed418578-c0e5-4a3e-91dc-7106d2d61db8	admin	2026-06-19 14:47:21.798	2026-07-19 10:54:44.614	active	session	2026-06-19 12:47:21.798	2026-06-19 12:47:21.798	2026-06-19 12:47:21.798	\N	\N	\N
 9	vs579e4kcor4ukgz9na4qktw	1	95f4c906779f75b5735eabcaded7e4fc	011cdf0180e8f36c3a082f4887cb2f65	ed418578-c0e5-4a3e-91dc-7106d2d61db8	admin	2026-06-19 13:24:46.118	2026-07-19 10:54:44.614	rotated	session	2026-06-19 11:24:46.118	2026-06-19 12:47:21.803	2026-06-19 11:24:46.118	\N	\N	\N
+13	x5bc868kz1lqit98stjw48xu	1	e5b260ff7ad3525d719388f2f657ad00	\N	71f872da-7673-4fc3-a793-8ccd453b55cc	admin	2026-06-23 15:06:34.439	2026-07-23 13:06:34.439	active	session	2026-06-23 13:06:34.439	2026-06-23 13:06:34.439	2026-06-23 13:06:34.441	\N	\N	\N
 \.
 
 
@@ -4052,7 +4056,7 @@ SELECT pg_catalog.setval('public.map_layer_generation_configs_id_seq', 1, false)
 -- Name: map_layers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.map_layers_id_seq', 6, true);
+SELECT pg_catalog.setval('public.map_layers_id_seq', 7, true);
 
 
 --
@@ -4087,14 +4091,14 @@ SELECT pg_catalog.setval('public.map_snapshots_operation_links_id_seq', 117, tru
 -- Name: operations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.operations_id_seq', 11, true);
+SELECT pg_catalog.setval('public.operations_id_seq', 12, true);
 
 
 --
 -- Name: operations_organization_links_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.operations_organization_links_id_seq', 11, true);
+SELECT pg_catalog.setval('public.operations_organization_links_id_seq', 12, true);
 
 
 --
@@ -4206,7 +4210,7 @@ SELECT pg_catalog.setval('public.strapi_releases_id_seq', 1, false);
 -- Name: strapi_sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.strapi_sessions_id_seq', 12, true);
+SELECT pg_catalog.setval('public.strapi_sessions_id_seq', 13, true);
 
 
 --
@@ -6939,27 +6943,11 @@ ALTER TABLE ONLY public.map_layers
 
 
 --
--- Name: map_layers_organization_lnk map_layers_organization_links_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.map_layers_organization_lnk
-    ADD CONSTRAINT map_layers_organization_links_fk FOREIGN KEY (map_layer_id) REFERENCES public.map_layers(id) ON DELETE CASCADE;
-
-
---
 -- Name: map_layers_organization_lnk map_layers_organization_links_inv_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.map_layers_organization_lnk
     ADD CONSTRAINT map_layers_organization_links_inv_fk FOREIGN KEY (organization_id) REFERENCES public.organizations(id) ON DELETE CASCADE;
-
-
---
--- Name: map_layers_organization_lnk map_layers_organization_lnk_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.map_layers_organization_lnk
-    ADD CONSTRAINT map_layers_organization_lnk_fk FOREIGN KEY (map_layer_id) REFERENCES public.map_layers(id) ON DELETE CASCADE;
 
 
 --
@@ -7678,5 +7666,5 @@ ALTER TABLE ONLY public.wms_sources
 -- PostgreSQL database dump complete
 --
 
-\unrestrict YoPrDhWHmG5nwT0rqZW5a0kaM8Cx080OLjX0W2kLUhSQf3RhquEdYGHRMa4a9nb
+\unrestrict Zqw99O3aUCzGxhP2ce9QEIRtAf4KDbickQrNEOGpjvzOaRcaKdpnKMJl4l1LTeQ
 
