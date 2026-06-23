@@ -125,7 +125,7 @@ export class SearchService {
     this.addSearch(this.coordinateSearch.bind(this), this._i18n.get('coordinates'), undefined, -1);
     this.addSearch(this.geoAdminStreetGeometrySearch.bind(this), this._i18n.get('streetSearch'), undefined, 50);
     this.addSearch(this.geoAdminWaterGeometrySearch.bind(this), this._i18n.get('waterSearch'), undefined, 90);
-    this.addSearch(this.geoAdminLocationSearch.bind(this), environment.searchLabel ?? 'Geo Admin', undefined, 100);
+    this.addSearch(this.geoAdminLocationSearch.bind(this), environment.searchLabel ?? 'Geo Admin', undefined, 10);
 
     effect(() => {
       const activeView = this.activeView();
@@ -252,6 +252,7 @@ export class SearchService {
     const collator = alphabetical ? new Intl.Collator() : undefined;
 
     return results.sort((a, b) => {
+      return 0; /*
       if (searchConfig.sortedByDistance) {
         return (a.internal?.dist ?? Number.MAX_SAFE_INTEGER) - (b.internal?.dist ?? Number.MAX_SAFE_INTEGER);
       }
@@ -273,6 +274,7 @@ export class SearchService {
       }
 
       return 0; // Maintain existing order
+      */
     });
   }
 
