@@ -26,9 +26,8 @@ import { JournalDrawOverlayComponent } from '../journal-draw-overlay/journal-dra
 import { SearchService } from '../search/search.service';
 import { CompassButtonComponent } from '../compass-button/compass-button.component';
 import { JournalService } from '../journal/journal.service';
+import { EmbedService } from '../embed/embed.service';
 import { environment } from '../../environments/environment';
-
-
 
 
 @Component({
@@ -62,6 +61,7 @@ export class FloatingUIComponent {
   sidebar = inject(SidebarService);
   snackbar = inject(MatSnackBar);
   mapState = inject(ZsMapStateService);
+  embed = inject(EmbedService);
 
   SidebarContext = SidebarContext;
 
@@ -179,9 +179,7 @@ export class FloatingUIComponent {
   }
 
   public async openDrawDialog(): Promise<void> {
-    const layer = await firstValueFrom(this.state.observeActiveLayer());
-    const ref = this._dialog.open(DrawDialogComponent);
-    ref.componentRef?.instance.setLayer(layer);
+    this._dialog.open(DrawDialogComponent);
   }
 
   public openLimitDialog(limitReached: boolean | null) {

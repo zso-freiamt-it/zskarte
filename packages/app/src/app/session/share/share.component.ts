@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../api/api.service';
+import { EmbedService } from '../../embed/embed.service';
 import { SessionService } from '../session.service';
 import { firstValueFrom } from 'rxjs';
 
@@ -13,12 +14,15 @@ export class ShareComponent {
   private _activatedRoute = inject(ActivatedRoute);
   private _router = inject(Router);
   private _api = inject(ApiService);
+  private _embed = inject(EmbedService);
   private _session = inject(SessionService);
 
   constructor() {
     this._activatedRoute.params.subscribe(async (params) => {
       const queryParams = await firstValueFrom(this._activatedRoute.queryParams);
-      await this._session.shareLogin(params['accessToken']);
+      // In embedded mode the share session must stay ephemeral, so unlinking later still shows
+      // the user's full list of operations instead of just the (now unlinked) shared one.
+      await this._session.shareLogin(params['accessToken'], { ephemeral: this._embed.isEmbedded() });
       
       const isAuthenticated = await firstValueFrom(this._session.observeAuthenticated());
       if (isAuthenticated) {
