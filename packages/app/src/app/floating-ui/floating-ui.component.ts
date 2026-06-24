@@ -179,9 +179,7 @@ export class FloatingUIComponent {
   }
 
   public async openDrawDialog(): Promise<void> {
-    const layer = await firstValueFrom(this.state.observeActiveLayer());
-    const ref = this._dialog.open(DrawDialogComponent);
-    ref.componentRef?.instance.setLayer(layer);
+    this._dialog.open(DrawDialogComponent);
   }
 
   public openLimitDialog(limitReached: boolean | null) {
