@@ -26,6 +26,7 @@ import { JournalDrawOverlayComponent } from '../journal-draw-overlay/journal-dra
 import { SearchService } from '../search/search.service';
 import { CompassButtonComponent } from '../compass-button/compass-button.component';
 import { JournalService } from '../journal/journal.service';
+import { EmbedService } from '../embed/embed.service';
 
 @Component({
   selector: 'app-floating-ui',
@@ -58,6 +59,7 @@ export class FloatingUIComponent {
   sidebar = inject(SidebarService);
   snackbar = inject(MatSnackBar);
   mapState = inject(ZsMapStateService);
+  embed = inject(EmbedService);
 
   SidebarContext = SidebarContext;
 
