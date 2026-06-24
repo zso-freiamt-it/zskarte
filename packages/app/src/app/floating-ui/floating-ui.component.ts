@@ -1,5 +1,5 @@
 import { Component, HostListener, inject, computed, ViewChild } from '@angular/core';
-import { BehaviorSubject, debounceTime, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, debounceTime, firstValueFrom, Subject, takeUntil } from 'rxjs';
 
 import { ZsMapStateService } from '../state/state.service';
 import { I18NService } from '../state/i18n.service';
@@ -27,6 +27,8 @@ import { SearchService } from '../search/search.service';
 import { CompassButtonComponent } from '../compass-button/compass-button.component';
 import { JournalService } from '../journal/journal.service';
 import { EmbedService } from '../embed/embed.service';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-floating-ui',
@@ -62,6 +64,8 @@ export class FloatingUIComponent {
   embed = inject(EmbedService);
 
   SidebarContext = SidebarContext;
+
+  readonly showNavLink = environment.showNavLink;
 
   private _ngUnsubscribe = new Subject<void>();
   public connectionCount = new BehaviorSubject<number>(0);
@@ -174,8 +178,10 @@ export class FloatingUIComponent {
     this.state.redoMapStateChange();
   }
 
-  public openDrawDialog(): void {
-    this._dialog.open(DrawDialogComponent);
+  public async openDrawDialog(): Promise<void> {
+    const layer = await firstValueFrom(this.state.observeActiveLayer());
+    const ref = this._dialog.open(DrawDialogComponent);
+    ref.componentRef?.instance.setLayer(layer);
   }
 
   public openLimitDialog(limitReached: boolean | null) {
