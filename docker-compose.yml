@@ -2,7 +2,6 @@ services:
   postgresql-zskarte:
     image: bitnamilegacy/postgresql:16.3.0
     container_name: postgresql-zskarte
-    restart: unless-stopped
     volumes:
       - ./data/postgresql:/bitnami/postgresql
       - ./packages/server/init:/docker-entrypoint-initdb.d
@@ -13,7 +12,7 @@ services:
       - POSTGRESQL_DATABASE=zskarte
     healthcheck:
       test: ["CMD-SHELL","pg_isready -U postgres"]
-      start_period: 60s
+      start_period: 120s
       retries: 6
     networks:
       - zskarte
